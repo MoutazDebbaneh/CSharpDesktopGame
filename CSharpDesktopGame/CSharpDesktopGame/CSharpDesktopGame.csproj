@@ -33,11 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OpenTK">
-      <HintPath>C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Graphics - S2\Graphics - S2\bin\OpenTK.dll</HintPath>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OpenTK.dll</HintPath>
     </Reference>
-    <Reference Include="OpenTK.GLControl">
-      <HintPath>C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Graphics - S2\Graphics - S2\bin\OpenTK.GLControl.dll</HintPath>
+    <Reference Include="OpenTK.Compatibility">
+      <HintPath>bin\OpenTK.Compatibility.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OpenTK.GLControl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -69,6 +74,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\block.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\play.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
