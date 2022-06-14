@@ -37,12 +37,15 @@ namespace CSharpDesktopGame
         public static double FALLING_FREQUENCY = 2;
         public static double FREQUENCY_CHANGE = 0.2;
 
+        public static int VERTICAL_SHIFT = 0;
+        public static double Y_TRANSLATE = 0.0;
+
         public static int BackgroundTextureId, BasketTextureId, playBtnTextureId, pauseBtnTextureId;
         public static int ballTextureId, blockTextureId;
 
         private int score = 0, misses = 0;
 
-        private bool isPaused = false, gameOver = false;
+        private bool isPaused = false, gameOver = false, lowResolution = false;
 
         private ArrayList BlocksList = new ArrayList();
         private ArrayList ballsList = new ArrayList();
@@ -306,16 +309,16 @@ namespace CSharpDesktopGame
             GL.Begin(BeginMode.Polygon);
 
             GL.TexCoord2(1, 0);
-            GL.Vertex2(-0.8, 0.98);
+            GL.Vertex2(-0.8, 0.98 - Y_TRANSLATE);
 
             GL.TexCoord2(1, 1);
-            GL.Vertex2(-0.8, 0.83);
+            GL.Vertex2(-0.8, 0.83 - Y_TRANSLATE);
 
             GL.TexCoord2(0, 1);
-            GL.Vertex2(-0.95, 0.83);
+            GL.Vertex2(-0.95, 0.83 - Y_TRANSLATE);
 
             GL.TexCoord2(0, 0);
-            GL.Vertex2(-0.95, 0.98);
+            GL.Vertex2(-0.95, 0.98 - Y_TRANSLATE);
 
             GL.BindTexture(TextureTarget.Texture2D, 0);
             GL.End();
@@ -378,7 +381,7 @@ namespace CSharpDesktopGame
             }
 
             text.Begin();
-            text.Print("Caught Balls: " + score, font, Color.Black, new RectangleF(160, 18, 250, 80), OpenTK.Graphics.TextPrinterOptions.Default, OpenTK.Graphics.TextAlignment.Center);
+            text.Print("Caught Balls: " + score, font, Color.Black, new RectangleF(160, 18 + VERTICAL_SHIFT, 250, 80), OpenTK.Graphics.TextPrinterOptions.Default, OpenTK.Graphics.TextAlignment.Center);
             text.End();
 
             if (gameOver)
@@ -390,7 +393,7 @@ namespace CSharpDesktopGame
 
 
             text.Begin();
-            text.Print("Misses: " + misses, font, Color.Black, new RectangleF(200, 18, 650, 80), OpenTK.Graphics.TextPrinterOptions.Default, OpenTK.Graphics.TextAlignment.Center);
+            text.Print("Misses: " + misses, font, Color.Black, new RectangleF(200, 18 + VERTICAL_SHIFT, 650, 80), OpenTK.Graphics.TextPrinterOptions.Default, OpenTK.Graphics.TextAlignment.Center);
             text.End();
 
         }
@@ -408,6 +411,9 @@ namespace CSharpDesktopGame
             {
                 startingPoint = new Point(676 - (WIDTH / 2), 10);
                 this.Height = 680;
+                lowResolution = true;
+                VERTICAL_SHIFT = 68;
+                Y_TRANSLATE = 0.18;
             }
             else
             {
