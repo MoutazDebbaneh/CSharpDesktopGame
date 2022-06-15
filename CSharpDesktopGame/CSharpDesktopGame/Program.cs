@@ -467,6 +467,7 @@ namespace CSharpDesktopGame
             isPaused = false;
             score = 0;
             misses = 0;
+            FALLING_FREQUENCY = 2;
             startFallingTimer(FALLING_FREQUENCY);
             bgSound.PlayLooping();
         }
