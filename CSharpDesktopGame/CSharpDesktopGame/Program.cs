@@ -80,8 +80,8 @@ namespace CSharpDesktopGame
             ballTextureId = Utilities.LoadTexture(@"Images\ball.png");
             blockTextureId = Utilities.LoadTexture(@"Images\block.png");
 
-            bgSound = new SoundPlayer(@"bg-music.wav");
-            gameOverSound = new SoundPlayer(@"gameover.wav");
+            bgSound = new SoundPlayer(@"Sounds\bg-music.wav");
+            gameOverSound = new SoundPlayer(@"Sounds\gameover.wav");
 
             restartGame();
         }
@@ -398,7 +398,7 @@ namespace CSharpDesktopGame
 
         }
 
-        private void initWindow()
+        private void initWindow() // Center window location based on screen resolution
         {
             int width = DisplayDevice.Default.Width;
             int height = DisplayDevice.Default.Height;
@@ -471,7 +471,7 @@ namespace CSharpDesktopGame
             bgSound.PlayLooping();
         }
         
-        private void increaseDifficulty()
+        private void increaseDifficulty() //Increase falling frequency until it reaches 0.5
         {
             if (score != 0 && score % 5 == 0 && FALLING_FREQUENCY > 0.5)
             {

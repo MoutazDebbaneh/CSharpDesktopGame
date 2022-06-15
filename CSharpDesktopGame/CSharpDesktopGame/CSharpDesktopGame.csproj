@@ -64,10 +64,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="bg-music.wav">
+    <Content Include="Sounds\bg-music.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="gameover.wav">
+    <Content Include="Sounds\gameover.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\ball.png">
